@@ -1,12 +1,13 @@
 pipeline {
-    agent any
-    stages {
-        stage('build') {
-           steps {
-               sh 'mvnw clean compile'
-           }
+	agent any
+	stages {
+	    stage('build') {
+    	   steps {
+				sh 'mvn clean compile'
+   	       }
 
-        }
-    }
+    	}
+
+	}
 
 }
