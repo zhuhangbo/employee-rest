@@ -71,8 +71,9 @@ public class EmployeeControllerTest {
 		Employee employee = this.mockEmployee();
 		employee.setDepartment("研发");
 
-		this.mockMvc.perform(put("/api/employees/{employeeId}", ConvertUtil.toJson(employee), employee.getId()) //
-				.accept(APPLICATION_JSON_UTF8)) //
+		this.mockMvc.perform(put("/api/employees/{employeeId}", employee.getId()) //
+				.contentType(APPLICATION_JSON_UTF8) //
+				.content(ConvertUtil.toJson(employee))) //
 				.andExpect(status().isOk()) //
 				.andDo(print());
 	}
