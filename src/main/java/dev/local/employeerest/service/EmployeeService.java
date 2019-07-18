@@ -1,19 +1,20 @@
 package dev.local.employeerest.service;
 
-import java.util.List;
+import dev.local.employeerest.dto.EmployeeDTO;
 
-import dev.local.employeerest.entity.Employee;
+import java.util.List;
+import java.util.Optional;
 
 public interface EmployeeService {
 
-	List<Employee> retrieveEmployees();
+	List<EmployeeDTO> retrieveEmployees();
 
-	Employee getEmployeeById(Long employeeId);
+	Optional<EmployeeDTO> getEmployeeById(Long employeeId);
 
-	void saveEmployee(Employee employee);
+	void saveEmployee(EmployeeDTO employee);
 
 	void deleteEmployee(Long employeeId);
 
-	void updateEmployee(Employee employee);
+	void updateEmployee(EmployeeDTO employee);
 
 }
