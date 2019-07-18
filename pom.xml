@@ -26,6 +26,10 @@
 		<swagger.version>2.9.2</swagger.version>
 	</properties>
 
+	<scm>
+		<developerConnection>scm:git:https://github.com/zhuhangbo/employee-rest.git</developerConnection>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.h2database</groupId>

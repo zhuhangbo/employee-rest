@@ -8,6 +8,11 @@ pipeline {
 	}
 
 	stages {
+	    stage('check out') {
+	        steps {
+                checkout scm
+	        }
+	    }
 	    stage('build') {
     	   steps {
 				sh 'mvn clean compile'
@@ -17,6 +22,12 @@ pipeline {
     	stage('test') {
     	    steps {
     	        sh 'mvn clean test'
+    	    }
+
+    	    post {
+    	        always {
+    	            junit 'target/surefire-reports/*.xml'
+    	        }
     	    }
     	}
 
